@@ -2,6 +2,10 @@
 
 An experimental, browser-based art piece inspired by Jorge Luis Borges' *The Library of Babel*.
 
+![Hero image](hero.png)
+
+<video src="video-falling.mp4" controls></video>
+
 ### Concept
 
 - **Infinite noise**: The background renders continuously regenerating, Library-of-Babel–style nonsense text – a wall of unreadable possibility.
@@ -11,7 +15,7 @@ An experimental, browser-based art piece inspired by Jorge Luis Borges' *The Lib
   - Its length is at least 4 characters (to de-emphasize tiny function words like \"the\", \"is\", \"of\").
 - **Highlighting meaning**:
   - Real words are rendered in gold.
-  - Longer real words (5+ letters) are treated as **rare** and glow brighter and slightly larger, making words like `library`, `hexagon`, `infinite`, `Vindications` feel like small discoveries.
+  - Longer real words (5+ letters) are treated as **rare** and glow brighter and slightly larger, making words like `library`, `hexagon`, `infinite`, `vindications` feel like small discoveries.
 - **Sediment of text**: As the rain falls, every word—real or not—collects at the bottom of the page, forming a growing sediment of what the system has spoken so far.
 
 Poetically, the piece treats Borges' story as the **only canon**: its letters generate the rain, and its vocabulary alone decides what lights up as meaningful. Meaning is whatever the Library has actually said, long enough to stand as a distinct word.
