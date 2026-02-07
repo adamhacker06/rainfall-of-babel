@@ -2,10 +2,18 @@
 
 An experimental, browser-based art piece inspired by Jorge Luis Borges' *The Library of Babel*.
 
+
 ![Hero image](hero.png)
 
 https://github.com/user-attachments/assets/cc38cba3-e78b-4d2e-979b-c87265a5a5bd
 ## Showcase & Description
+
+### Inspiration
+I was inspired to create this artwork after listening to Max Kreminski, a human-computer interaction researcher that focuses in computational poetry, gave a guest lecture for my DESINV 23 class. Their work made me realize the part that we as humans play in giving meaning to a specific subset of all possible language. It's up to us, as humans, to decide what does or does not have meaning.
+
+This insight reminded me of the story of the Library of Babel, or more specifically the internet-famous website libraryofbabel.info. The story of the Library of Babel (if I were to summarize in a few short words) describes a library that contains all possible combinations of all human language. So, for instance, this library would contain the first sentence you ever spoke, as well as your last, the password to your cellphone, as well as the seriel number printed on the back.
+
+Amongst all this information, however, is an infinitely large amount of "nothingness". But it's because of our defintion, as humnans, of language that leaves this jargon with the label of both "jargon" and "nothingness". I wanted to capture this idea in a fun way through this artwork.
 
 ### Concept
 
