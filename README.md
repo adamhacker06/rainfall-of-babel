@@ -4,7 +4,7 @@ An experimental, browser-based art piece inspired by Jorge Luis Borges' *The Lib
 
 ![Hero image](hero.png)
 
-<video src="video-falling.mp4" controls></video>
+https://github.com/user-attachments/assets/cc38cba3-e78b-4d2e-979b-c87265a5a5bd
 
 ### Concept
 
