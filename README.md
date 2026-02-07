@@ -1,10 +1,11 @@
-## Rainfall of Babel
+# Rainfall of Babel
 
 An experimental, browser-based art piece inspired by Jorge Luis Borges' *The Library of Babel*.
 
 ![Hero image](hero.png)
 
 https://github.com/user-attachments/assets/cc38cba3-e78b-4d2e-979b-c87265a5a5bd
+## Showcase & Description
 
 ### Concept
 
