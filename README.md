@@ -2,7 +2,6 @@
 
 An experimental, browser-based art piece inspired by Jorge Luis Borges' *The Library of Babel*.
 
-
 ![Hero image](hero.png)
 
 https://github.com/user-attachments/assets/cc38cba3-e78b-4d2e-979b-c87265a5a5bd
@@ -65,15 +64,32 @@ Amongst all this information, however, is an infinitely large amount of "nothing
 
 #### Initial Draft
 
-![Initial Draft](draf1.png)
+This first draft of this project posed a similar thought experiment but expressed it in a much different format. My original idea was to have "words" on a bunch of chips, which each chip colored based on it's "realness". The chips would essentially collect in a pile, and then it would be the user's job to dig through the pile.
+
+However, I decided not to take this route because I thought there would be a lack of motion, of which I believe heavily emphasizes the accumulation of meaning over time. This realization made me think about ways to express accumulation. Eventually, I landed on the idea of rainfall.
+
+I then scaled back the idea from chips to simple words falling from the top of the screen to the bottom, with the highlighting expressing its "meaning". A snapshot of an initial brainstorming board I have is placed below.
+
+![Initial Draft](draft1.png)
+
+Another choice I made had to do with the design of the word generation. At first, I had a set that contained a list of many common English words. Then, I had words randomly generated. If they were found in the list, they were highlighted. At first, this worked, with the overall visual effect satisfied.
+
+However, as I thought deeper about the meaning and purpose of the computational art, I wondered if this "predefined list" approach achieved the meaning I was intending to express with this art. I noticed that words were being generated that *are* words but are *not* contained in this list. I saw this as a discrepancy.
+
+So, I redesigned the way that words are generated. Rather than having a preset list of common words, I scraped the story of the Library of Babel and created a frequency map of 3-character sequences to the next most likely character (the technical specifics of this can be found above). A snapshot of the list of words I previously used can be seen below.
+
 ![List of words](list-of-words.png)
 
 ### Prototyping and Building
+
+There were multiple design changes that I had to make as I started designing the artwork. For instance, there was one point where my code had a bug where too many words were generated at once. This was very quickly overwhelming, so I had to debug and reduce the amount of words generated in each tick. Also, at first I had any match to a 3-character sequence be highlighted. However, this highlighted utility words like "and" and "the", which oversatured the number of highlighted words on screen. So, I made there be a default length of 4 characters for a word to be highlighted. A screenshot of the "too many words" bug can be found below.
 
 ![Too many words](too-many-words.png)
 
 ## Conclusion & Reflection
 
+I really enjoyed making this artwork. It was a fun blend of a website that I find really interest, a story with fun historical context, and technology that I find very innovative. It was also very nice to express my interests creatively, and there was a specific sense of satisfaction about completing an artwork start to finish.
 
+One key insight I had is that just because something "looks" correct, it does not mean it is exactly the right thing to do. I experienced this when trying to figure out what model to use for generating new words. I wanted to make sure the generation method represented the key philosophy that I wanted to get across.
 
-- more than just loooking right. does the generation and computation represent what i want it to
+To improve on this project in the future, I would like expand on the visual aspect of the artwork. Instead of words collecting at the bottom, I would maybe try to allow multiple ways to separate words from non-words. I would also like a way to visualze real English words that were generated but were not in the Library of Babel dataset.
