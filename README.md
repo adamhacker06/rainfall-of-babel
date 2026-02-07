@@ -9,17 +9,17 @@ https://github.com/user-attachments/assets/cc38cba3-e78b-4d2e-979b-c87265a5a5bd
 ## Showcase & Description
 
 ### Inspiration
-I was inspired to create this artwork after listening to Max Kreminski, a human-computer interaction researcher that focuses in computational poetry, gave a guest lecture for my DESINV 23 class. Their work made me realize the part that we as humans play in giving meaning to a specific subset of all possible language. It's up to us, as humans, to decide what does or does not have meaning.
+I was inspired to create this artwork after listening to Max Kreminski, a human-computer interaction researcher that focuses in computational poetry, give a guest lecture for my DESINV 23 class. Their work made me realize the part we as humans play in giving meaning to a specific subset of all possible language. It's up to us, as humans, to decide what does or does not have meaning.
 
 This insight reminded me of the story of the Library of Babel, or more specifically the internet-famous website libraryofbabel.info. The story of the Library of Babel (if I were to summarize in a few short words) describes a library that contains all possible combinations of all human language. So, for instance, this library would contain the first sentence you ever spoke, as well as your last, the password to your cellphone, as well as the seriel number printed on the back.
 
-Amongst all this information, however, is an infinitely large amount of "nothingness". But it's because of our defintion, as humnans, of language that leaves this jargon with the label of both "jargon" and "nothingness". I wanted to capture this idea in a fun way through this artwork.
+Amongst all this information, however, is an infinitely large amount of "nothingness". But it's because of our defintion of language, as humnans, that leaves this jargon labeled both as "jargon" and "nothingness". I wanted to capture this idea in a fun way through this artwork.
 
 ### Concept
 
-- **Infinite noise**: The background renders continuously regenerating, Library-of-Babel–style nonsense text – a wall of unreadable possibility.
+- **Infinite noise**: The background renders Library-of-Babel–style nonsense text – a wall of unreadable possibility.
 - **Language-shaped rain**: In front of that, words \"rain\" from the top of the screen. They are not chosen from a fixed list; instead, a **character-level Markov chain** is trained on the full text of *The Library of Babel*. It generates one character at a time, so words emerge naturally from the statistical shape of Borges' own sentences.
-- **What counts as \"real\"**: Every falling token is checked against the vocabulary of the story. A word is considered *real* only if:
+- **What counts as \"real\"**: Every falling "word" is checked against the vocabulary of the story. A word is considered *real* only if:
   - It appears somewhere in Borges' *Library of Babel* text, **and**
   - Its length is at least 4 characters (to de-emphasize tiny function words like \"the\", \"is\", \"of\").
 - **Highlighting meaning**:
@@ -53,3 +53,11 @@ There is no UI or interaction beyond watching and waiting. The only \"action\" i
 - **Highlighting**: A `Set` of all unique words from the story is precomputed. A falling token is highlighted if and only if its lowercase form is in that set and its length ≥ 4. A separate length check (≥ 5) drives the rarer, brighter style.
 
 The goal is not to reproduce Borges' story, but to stage a small, visual corner of his Library: an infinite-looking wall of noise, and a slow rain of words in which **recognition** and **statistics** together decide what we call meaning.
+
+## Process
+
+### Ideation & Design
+
+### Prototyping and Building
+
+## Conclusion & Reflection
