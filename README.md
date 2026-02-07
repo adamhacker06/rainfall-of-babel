@@ -8,12 +8,9 @@ An experimental, browser-based art piece inspired by Jorge Luis Borges' *The Lib
 https://github.com/user-attachments/assets/cc38cba3-e78b-4d2e-979b-c87265a5a5bd
 ## Showcase & Description
 
-### Inspiration
-I was inspired to create this artwork after listening to Max Kreminski, a human-computer interaction researcher that focuses in computational poetry, give a guest lecture for my DESINV 23 class. Their work made me realize the part we as humans play in giving meaning to a specific subset of all possible language. It's up to us, as humans, to decide what does or does not have meaning.
+### Prelude
 
-This insight reminded me of the story of the Library of Babel, or more specifically the internet-famous website libraryofbabel.info. The story of the Library of Babel (if I were to summarize in a few short words) describes a library that contains all possible combinations of all human language. So, for instance, this library would contain the first sentence you ever spoke, as well as your last, the password to your cellphone, as well as the seriel number printed on the back.
-
-Amongst all this information, however, is an infinitely large amount of "nothingness". But it's because of our defintion of language, as humnans, that leaves this jargon labeled both as "jargon" and "nothingness". I wanted to capture this idea in a fun way through this artwork.
+This artwork represents the role that humans play in giving meaning to language. Throughout the rainfall of generated "words", some shine bright while other's are dim, representing the "meaning" they contain. It's defined (and inspired by) by the words contained in the story of the Library of Babel. 
 
 ### Concept
 
@@ -58,6 +55,25 @@ The goal is not to reproduce Borges' story, but to stage a small, visual corner 
 
 ### Ideation & Design
 
+#### Inspiration
+
+I was inspired to create this artwork after listening to Max Kreminski, a human-computer interaction researcher that focuses in computational poetry, give a guest lecture for my DESINV 23 class. Their work made me realize the part we as humans play in giving meaning to a specific subset of all possible language. It's up to us, as humans, to decide what does or does not have meaning.
+
+This insight reminded me of the story of the Library of Babel, or more specifically the internet-famous website libraryofbabel.info. The story of the Library of Babel (if I were to summarize in a few short words) describes a library that contains all possible combinations of all human language. So, for instance, this library would contain the first sentence you ever spoke, as well as your last, the password to your cellphone, as well as the seriel number printed on the back.
+
+Amongst all this information, however, is an infinitely large amount of "nothingness". But it's because of our defintion of language, as humnans, that leaves this jargon labeled both as "jargon" and "nothingness". I wanted to capture this idea in a fun way through this artwork.
+
+#### Initial Draft
+
+![Initial Draft](draf1.png)
+![List of words](list-of-words.png)
+
 ### Prototyping and Building
 
+![Too many words](too-many-words.png)
+
 ## Conclusion & Reflection
+
+
+
+- more than just loooking right. does the generation and computation represent what i want it to

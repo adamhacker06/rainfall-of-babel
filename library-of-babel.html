@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library of Babel - Falling Words</title>
     <style>
+        /* Reset: remove default margins/padding, box-sizing for layout */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Page: dark background, full viewport, no scroll */
         body {
             font-family: 'Courier New', monospace;
             background: #0a0a0a;
@@ -20,7 +22,7 @@
             position: relative;
         }
 
-        /* Background text layer */
+        /* Background: faint random “Babel” text layer, non-interactive */
         .background-text {
             position: absolute;
             top: 0;
@@ -38,7 +40,7 @@
             color: #4a4a4a;
         }
 
-        /* Falling words container */
+        /* Container for words that fall from top to bottom */
         .falling-words {
             position: absolute;
             top: 0;
@@ -49,6 +51,7 @@
             pointer-events: none;
         }
 
+        /* Single falling word: gray by default, animated fall */
         .word {
             position: absolute;
             font-size: 16px;
@@ -59,26 +62,28 @@
             animation: fall linear;
         }
 
+        /* Words that appear in the Borges story: gold highlight */
         .word.real {
             color: #ffd700;
             font-weight: bold;
             text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
         }
 
-        /* Longer real words = rarer = more luminous */
+        /* Longer real words (5+ chars) from story — brighter gold, larger */
         .word.real.rare {
             color: #fff5cc;
             font-size: 18px;
             text-shadow: 0 0 16px rgba(255, 215, 0, 0.8), 0 0 24px rgba(255, 200, 100, 0.4);
         }
 
+        /* Fall animation: move element from top to bottom of viewport */
         @keyframes fall {
             to {
                 transform: translateY(100vh);
             }
         }
 
-        /* Accumulated words at bottom */
+        /* Bottom panel: words that have finished falling, scrollable list */
         .accumulated-words {
             position: absolute;
             bottom: 0;
@@ -95,6 +100,7 @@
             line-height: 1.6;
         }
 
+        /* Words in bottom panel: inline, no fall animation */
         .accumulated-words .word {
             display: inline-block;
             margin-right: 8px;
@@ -103,6 +109,7 @@
             position: static;
         }
 
+        /* Custom scrollbar for accumulated-words panel */
         .accumulated-words::-webkit-scrollbar {
             width: 8px;
         }
@@ -116,6 +123,7 @@
             border-radius: 4px;
         }
 
+        /* Centered title at top of page */
         .title {
             position: absolute;
             top: 30px;
@@ -132,16 +140,20 @@
     </style>
 </head>
 <body>
+    <!-- Main title -->
     <div class="title">THE RAINFALL OF BABEL</div>
 
+    <!-- Faint random-character background -->
     <div class="background-text" id="backgroundText"></div>
 
+    <!-- Words falling from top -->
     <div class="falling-words" id="fallingWords"></div>
 
+    <!-- Words that have landed, shown at bottom -->
     <div class="accumulated-words" id="accumulatedWords"></div>
 
     <script>
-        // The Library of Babel - full story text
+        // Full Borges “Library of Babel” story — source for “real” words and Markov training
         const LIBRARY_OF_BABEL_TEXT = (
             "The universe (which others call the Library) is composed of an indefinite and " +
             "perhaps infinite number of hexagonal galleries, with vast air shafts between, " +
@@ -355,8 +367,7 @@
             "."
         ).toLowerCase().replace(/\s+/g, " ");
 
-        // Extract all unique words from the Library of Babel story
-        // These are the ONLY words that will be highlighted as "real"
+        // Build set of unique words from story — only these get gold “real” highlight
         function extractWordsFromText(text) {
             const words = text.match(/[a-zA-Z]+/g) || [];
             return new Set(words.map(w => w.toLowerCase()));
@@ -364,10 +375,11 @@
 
         const libraryWords = extractWordsFromText(LIBRARY_OF_BABEL_TEXT);
 
-        // Markov chain: trained on the Library of Babel story itself
+        // Markov chain trained on story text — generates Babel-like character sequences
         const MARKOV_ORDER = 3;
         let markovModel = null;
 
+        // Build model: for each N-char key, list of possible next characters
         function buildMarkovModel(text, order) {
             const model = {};
             for (let i = 0; i <= text.length - order; i++) {
@@ -379,6 +391,7 @@
             return model;
         }
 
+        // Generate string of given length by walking the Markov model
         function markovGenerate(length) {
             if (!markovModel) markovModel = buildMarkovModel(LIBRARY_OF_BABEL_TEXT, MARKOV_ORDER);
             const chars = "abcdefghijklmnopqrstuvwxyz .,;:";
@@ -393,6 +406,7 @@
             return out;
         }
 
+        // Pure random characters — used for background “noise” text
         function generateBabelText(length) {
             const chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.,;:!?()[]{}\'"- ';
             let text = '';
@@ -402,16 +416,17 @@
             return text;
         }
 
+        // Get array of alphabetic tokens from a string
         function extractWords(text) {
             return text.match(/[a-zA-Z]+/g) || [];
         }
 
+        // True if word is in story and long enough — used for gold highlight
         function isRealWord(word) {
-            // Highlight only if: (1) word appears in the Library of Babel, and (2) length >= 4
-            // (reduces "auto" highlights from short words like "the", "is", "a")
             return word.length >= 4 && libraryWords.has(word.toLowerCase());
         }
 
+        // Fill background div with random-character lines; refreshes periodically
         function generateBackground() {
             const backgroundText = document.getElementById('backgroundText');
             const lines = [];
@@ -421,6 +436,7 @@
             backgroundText.textContent = lines.join('\n');
         }
 
+        // Create one falling word element: random x, 5–9s fall, remove after animation, then add to bottom panel
         function createFallingWord(word, isReal) {
             const fallingWords = document.getElementById('fallingWords');
             const wordElement = document.createElement('div');
@@ -448,6 +464,7 @@
             }, duration);
         }
 
+        // Append word to bottom accumulated-words panel (same real/rare styling)
         function addToAccumulated(word, isReal) {
             const accumulatedWords = document.getElementById('accumulatedWords');
             const wordElement = document.createElement('span');
@@ -457,6 +474,7 @@
             accumulatedWords.appendChild(wordElement);
         }
 
+        // Main loop: generate Markov text, extract words, spawn ~50% as falling words at intervals
         function startWordRain() {
             function tick() {
                 const text = markovGenerate(80);
@@ -472,6 +490,7 @@
             tick();
         }
 
+        // Init: one background, start rain, refresh background every 30s
         generateBackground();
         startWordRain();
         setInterval(generateBackground, 30000);
